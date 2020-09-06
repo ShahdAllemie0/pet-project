@@ -1,31 +1,37 @@
 {% extends "base.html" %}
 
 
-{% block title %} List{% endblock title %}
+{% block title %} {{pet.name}} details {% endblock title %}
+
 
 {% block content %}
-
-
-{% for pet in pets %}
 
 <div class="container ">
   <div class="row" style="">
     <div class="card col-lg-12 ">
+      
       <div class="card-header">
         {{pet.name}}
       </div>
+
       <div class="card-body">
+        <h5 class="card-title">{{pet.age}}--{{pet.price}} </h5>
         <p class="card-text">{% if pet.image %}
       			<img src="{{pet.image.url}}"  class="card-img-top"  alt="" >
       		{% endif %}
         </p>
-        <a href="{% url 'detail' pet.id %}" class="btn btn-outline-success">View</a>
-
+      <!-- <a href="{% url 'detail' pet.id %}" class="btn btn-outline-success">Edit</a>
+    	<a href="{% url 'car-update' pet.id %}" class="btn btn-outline-danger">Delet</a> -->
       </div>
+
     </div>
   </div>
 </div>
 
-{% endfor %}
 
+
+
+
+
+{% endfor %}
 {% endblock content %}

@@ -6,4 +6,4 @@ class Pet(models.Model):
     age = models.IntegerField()
     available = models.BooleanField(default = True)
     image = models.ImageField()
-    price = models.DecimalField()
+    price = models.DecimalField(max_digits=6, decimal_places=2)
