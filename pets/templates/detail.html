@@ -9,7 +9,7 @@
 <div class="container ">
   <div class="row" style="">
     <div class="card col-lg-12 ">
-      
+
       <div class="card-header">
         {{pet.name}}
       </div>
@@ -20,8 +20,8 @@
       			<img src="{{pet.image.url}}"  class="card-img-top"  alt="" >
       		{% endif %}
         </p>
-      <!-- <a href="{% url 'detail' pet.id %}" class="btn btn-outline-success">Edit</a>
-    	<a href="{% url 'car-update' pet.id %}" class="btn btn-outline-danger">Delet</a> -->
+      <a href="{% url 'update' pet.id %}" class="btn btn-outline-success">Edit</a>
+    	<a href="{% url 'delete' pet.id %}" class="btn btn-outline-danger">Delet</a>
       </div>
 
     </div>
