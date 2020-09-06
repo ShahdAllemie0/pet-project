@@ -4,9 +4,9 @@ from .forms import PetForm
 
 # Create your views here.
 def list(request):
-    pet = Pet.objects.filter(available=True)
+    pets = Pet.objects.filter(available=True)
     context = {
-    "pet": pet,
+    "pets": pets,
     }
     return render(request, 'list.html', context)
 
@@ -34,11 +34,11 @@ def create(request):
     return render(request,'create.html',context)
 
 
-def update(request, pet_d):
+def update(request, pet_id):
     pet = Pet.objects.get(id = pet_id)
-    form=PetForm(intance = pet)
+    form=PetForm(instance = pet)
     if request.method == 'POST':
-        form=PetForm(request.POST, request.FILES, intance = pet)
+        form=PetForm(request.POST, request.FILES, instance = pet)
         if form.is_valid():
             form.save()
             return redirect('detail', pet_id)
