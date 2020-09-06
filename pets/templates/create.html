@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+
+{% block title %} {{pet.name}} details {% endblock title %}
+
+
+{% block content %}
+
+<div class="container ">
+  <div class="row" style="">
+    <div class="card col-lg-12 ">
+
+    <form action="{% url 'create' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form}}
+
+        <input type="submit" value="Create" class="btn btn-outline-success">
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock content %}

@@ -20,5 +20,6 @@ from pets import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path ('list/', views.list, name='list'),
-    path ('detail/', views.detail, name='detail'),
+    path ('detail/<int:pet_id>', views.detail, name='detail'),
+    path ('create/', views.create, name='create'),
 ]
