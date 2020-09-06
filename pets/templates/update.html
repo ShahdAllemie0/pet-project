@@ -6,16 +6,17 @@
 
 
 {% block content %}
-
+<br />
 <div class="container ">
   <div class="row" style="">
-    <div class="card col-lg-12 ">
+    <div class="card col-lg-12 "  style="border:2px dashed grey;">
 
     <form action="{% url 'update' pet.id %}" method="POST" enctype="multipart/form-data">
+      <br />
         {% csrf_token %}
         {{form|crispy}}
 
-        <input type="submit" value="Update" class="btn btn-outline-success">
+        <input type="submit" value="Update" class="btn btn-outline-success my-3">
 
       </form>
 

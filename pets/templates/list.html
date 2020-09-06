@@ -6,26 +6,29 @@
 {% block content %}
 
 
+  <div class="row" style="">
+
 {% for pet in pets %}
 
-<div class="container ">
-  <div class="row" style="">
-    <div class="card col-lg-12 ">
-      <div class="card-header">
+
+
+    <div class="card col-lg-4 m-3 h-100"  style="background-color:#E0E0E0">
+      <div class="card-header" style="background-color:orange; color:white;">
         {{pet.name}}
       </div>
       <div class="card-body">
         <p class="card-text">{% if pet.image %}
-      			<img src="{{pet.image.url}}"  class="card-img-top"  alt="" >
+      			<img src="{{pet.image.url}}"  class="card-img-top"  alt=""  style=" height: 200px; object-fit: cover;">
       		{% endif %}
         </p>
-        <a href="{% url 'detail' pet.id %}" class="btn btn-outline-success">View</a>
+        <a href="{{pet.get_absolute_url}}" class="btn btn-outline-success btn-block">View</a>
 
       </div>
     </div>
-  </div>
-</div>
+
 
 {% endfor %}
+</div>
+
 
 {% endblock content %}
